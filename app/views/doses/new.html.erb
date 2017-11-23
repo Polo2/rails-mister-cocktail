@@ -1,0 +1,8 @@
+<h1>JNouvelle dose</h1>
+
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.submit "nouvelle dose d'ingrédient", class: "btn btn-primary"%>
+<% end %>
+
