@@ -1,2 +1,24 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://americangallery21st.files.wordpress.com/2014/12/marilyn-and-kennedy-at-the-folies.jpg');">
+  <div class="row">
+    <div class="banner-content">
+      <h1><%= @cocktail.name %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="banner-content">
+      <h2>Et ses ingrédients :</h2>
+      <ul>
+       <% @cocktail.doses.each do |dos| %>
+         <li><%= dos.description %><b> de </b>    <%= dos.ingredient.name %></li>
+       <% end %>
+       <li>Et un peu de vitriol</li>
+     </ul>
+   </div>
+  </div>
+</div>
+
+<div class="boutons">
+<h2><%= link_to "ajouter un ingrédient à ce cocktail", new_cocktail_dose_path(@cocktail), class: "btn btn-primary btn-lg" %></h2>
+<h2><%= link_to "retour liste", cocktails_path, class: "btn btn-primary btn-lg" %>
+</h2>
+</div>
