@@ -1,2 +1,11 @@
-<h1>Doses#index</h1>
-<p>Find me in app/views/doses/index.html.erb</p>
+<h1>Liste des doses pour <%= @cocktail.name %> </h1>
+
+<% @cocktail.doses.each do |dos| %>
+
+  <p><%= dos.description %><b> de </b> <%= dos.ingredient.name %></p>
+<% end %>
+
+<p>Et un peu de vitriol</p>
+
+
+

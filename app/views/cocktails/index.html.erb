@@ -1,2 +1,30 @@
-<h1>Cocktails#index</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
+<div class="title">
+  <h1>Liste des Cocktails</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cock| %>
+
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.calvados-cocktails.com/medias/recettes/les-grands-calssiques.jpg');">
+        <div class="card-category">Cocktail</div>
+        <div class="card-description">
+          <h2><%= link_to cock.name, cocktail_path(cock) %></h2>
+        </div>
+        <img class="card-user" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/lxemv3sdsbnkhcaufffd.jpg">
+      </div>
+
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div id="bouton">
+
+  <%= link_to "Ajouter un cocktail", new_cocktail_path, {class: "btn btn-primary"} %>
+
+</div>
+
+
+
